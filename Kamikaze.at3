@@ -1,0 +1,31 @@
+#name Kamikaze
+
+#color $7777FF
+
+#equip
+  hull        10  4  // SC 1 
+  material    18     // titanium
+  engine      13     // average engine
+  turret      0      // 1-slot-turret
+  scanner     11  0  // D-F-Arc scanner on slot 0
+  arcd        3   0  // DC 3
+  arcw        4   0  // arc width 4
+  extension   3      // energy bomb
+#equip
+
+#begin
+
+        out   30   0          // head turret to the front
+        out   10   40        // start driving full speed
+
+	   in    50   ax         // scan
+        cmp   ax   -1         // anyone there?
+        je               // no, turn away
+        out   11   -1         // turn back a bit
+        cmp   ax   70         // close enough for ebomb?
+        jg               // no, start over
+        int   90              // yes, ebomb
+        jmp              // start over
+
+   out   11   4          // turn
+        jmp              // return to start

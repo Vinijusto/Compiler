@@ -1,0 +1,45 @@
+#name Cosmos
+
+#color $0000FF
+
+#equip
+  hull        0   4   
+  material    9     
+  engine      6      
+  turret      3      
+  weapon      8   0  
+  weapon      8   64
+  weapon      8   128
+  weapon      8   192
+  scanner     1   0  
+  
+#equip
+
+#begin
+
+        out   30   0          
+
+        out   10   100     
+
+@main	in	50	ax	
+	in 	32	bx
+	neg	bx 	
+	out	31	bx
+	in	52	bx
+	out	31	bx
+@tiro	out	41	0
+	in	48	bx		
+	cmp	bx	270
+	jge	@main
+	out	40 	0
+	out	41	1
+	out	31	-64
+	out	40	0
+	out	41	2
+	out	31	-64
+	out	40	0
+	out	41	3
+	out	31	-64
+	out	40	0
+	out	11	-10
+	jmp	@main

@@ -1,0 +1,14 @@
+#name Dummy
+
+#color $777777
+
+#equip
+  hull        1   4  // Size Class 4 
+  material    19     // Iridium
+  engine      14     // ES777
+#equip
+
+#begin
+
+@main   out   11   7          // turn
+        jmp   @main           // again
